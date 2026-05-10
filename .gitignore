@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# IDE / editor
+.vscode/
+.idea/
+
+# --- NOTE ---
+# We intentionally do NOT ignore data/ — for a graded project,
+# the grader needs to clone and reproduce results.
+# If the data ever grows past ~50 MB, revisit this decision.
