@@ -20,6 +20,9 @@ I would like to track what has been happening in Germany before the reform, espe
 
 3. *(Additional question)*  **Were there any observable trends in Kreises with the youngest population?**   
 
+## Methodological choice
+I've excluded private clinics and day-clinics without a Versorgungsvertrag with statutory insurance from the research as they aren't accessible for the majority of patients. Facility types 1, 2, 3 and 5 (university hospitals, specialised clinics, general hospitals, hospitals accepting people with statutory insurance and military hospitals) are kept as a proxy for accessible inpatient hospital care. 
+
 ## Data sources
 
 | Source | Content| Years | Format |
@@ -49,7 +52,7 @@ charts.
 
 ## Open questions 
 
-- **Kreis boundary reforms** (especially Mecklenburg-Vorpommern 2011)
-  How to compare regions over time, with the change of boundaries?
+- **Kreis boundary reforms - solved** (especially Mecklenburg-Vorpommern 2011)
+  How to compare regions over time, with the change of boundaries? -- The data for 2011 is relevant, it's the earliest year, and in the statistical data they've already addressed the change of bounderies. 
 - **Hospital identity across years** — when a hospital "disappears"
   between two snapshots, did it really close, or did it merge / rebrand?
