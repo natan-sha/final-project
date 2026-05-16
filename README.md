@@ -20,8 +20,12 @@ I would like to track what has been happening in Germany before the reform, espe
 
 3. *(Additional question)*  **Were there any observable trends in Kreises with the youngest population?**   
 
-## Methodological choice
-I've excluded private clinics and day-clinics without a Versorgungsvertrag with statutory insurance from the research as they aren't accessible for the majority of patients. Facility types 1, 2, 3 and 5 (university hospitals, specialised clinics, general hospitals, hospitals accepting people with statutory insurance and military hospitals) are kept as a proxy for accessible inpatient hospital care. 
+## Methodological choices
+I've excluded private clinics and day-clinics without a Versorgungsvertrag with statutory insurance from the research as they aren't accessible for the majority of patients. Facility types 1, 2, 3 and 5 (university hospitals, specialised clinics, general hospitals, hospitals accepting people with statutory insurance and military hospitals) are kept as a proxy for accessible inpatient hospital care.  
+
+I've excluded Berlin and Hamburg for the first two research questions, as they are clear outliers in access to hospitals: a disproportionate concentration of Maximalversorger (top-tier hospitals) and university medical centers that serve the surrounding region, not just their own residents. The cities are also relatively young. I'll need to bring them back for the 3rd research question. 
+
+When counting hospitals per Kreis, I chose to count by physical location, not hospital names: sometimes a hospital has several departments, each of which is located at its own address. This will allow to analyse the access to hospitals as a physical proximity. The downside of treating Kreis boundaries as access boundaries is of course, that reality might be different for those living on the borders of the Kreis. Residents living near the edge of a Kreis may in practice be closer to a hospital in a neighbouring Kreis than to any hospital within their own — which this count would miss.
 
 ## Data sources
 
