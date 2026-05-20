@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-CZceb_kH.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-Bam3NpBI.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-C_DwAp7Z.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-CEsLFVD9.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-D5MAsWEG.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-C6PDArdf.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        const scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          // Guard against race condition where iframe isn't ready
+          if (!obj.contentWindow?.document?.documentElement) {
+            return;
+          }
+          const element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          const hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          const newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((_entries) => {
+          setHeight();
+        });
+        // Only observe if iframe content is ready
+        if (obj.contentWindow?.document?.body) {
+          resizeObserver.observe(obj.contentWindow.document.body);
+        }
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>Final project</title>
+    <script type="module" crossorigin src="./assets/index-BMxMikGP.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/preload-helper-DItdS47A.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-LvLJmgfZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-Bj1aDYRI.js">
+    <link rel="modulepreload" crossorigin href="./assets/compiler-runtime-B3qBwwSJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/jsx-runtime-BqBOg78p.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEventListener-BR0C1MaI.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-YteS-k_t.js">
+    <link rel="modulepreload" crossorigin href="./assets/precisionRound-C3fmBb6j.js">
+    <link rel="modulepreload" crossorigin href="./assets/defaultLocale-B6z1Qyqt.js">
+    <link rel="modulepreload" crossorigin href="./assets/vega-loader.browser-BegSZk0G.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-CGtUbqcR.js">
+    <link rel="modulepreload" crossorigin href="./assets/clsx-Dz_KRrWq.js">
+    <link rel="modulepreload" crossorigin href="./assets/cn-DCUzRj2J.js">
+    <link rel="modulepreload" crossorigin href="./assets/badge-C7-HR1IO.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-D9nb17Rw.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-dom-CSu739Rf.js">
+    <link rel="modulepreload" crossorigin href="./assets/fullscreen-BDxedMYP.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-items-CwUpDHG7.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BoOh2kN5.js">
+    <link rel="modulepreload" crossorigin href="./assets/createLucideIcon-D5guW7EU.js">
+    <link rel="modulepreload" crossorigin href="./assets/check-BH35Ndha.js">
+    <link rel="modulepreload" crossorigin href="./assets/x-C-6liIBr.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-5i7URBEn.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-Gcwqb_SK.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-toast-T0_cQDma.js">
+    <link rel="modulepreload" crossorigin href="./assets/useEvent-D91BmmQi.js">
+    <link rel="modulepreload" crossorigin href="./assets/invariant-BUdrueMv.js">
+    <link rel="modulepreload" crossorigin href="./assets/isObject-DvLSfCY5.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseFor-DKD1r8uL.js">
+    <link rel="modulepreload" crossorigin href="./assets/merge-_9WLTEyt.js">
+    <link rel="modulepreload" crossorigin href="./assets/zod-H_cgTO0M.js">
+    <link rel="modulepreload" crossorigin href="./assets/utils-BrXijSdZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/Deferred-DMWKlZOV.js">
+    <link rel="modulepreload" crossorigin href="./assets/uuid-DercMavo.js">
+    <link rel="modulepreload" crossorigin href="./assets/DeferredRequestRegistry-CUzZ0y7K.js">
+    <link rel="modulepreload" crossorigin href="./assets/constants-DMpttj8Q.js">
+    <link rel="modulepreload" crossorigin href="./assets/session-VtovaFBS.js">
+    <link rel="modulepreload" crossorigin href="./assets/config-CPqw1wUv.js">
+    <link rel="modulepreload" crossorigin href="./assets/requests-DIwGYs0l.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLifecycle-DieWOfXE.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNonce-DfoVjkkH.js">
+    <link rel="modulepreload" crossorigin href="./assets/useTheme-DFXuDFj9.js">
+    <link rel="modulepreload" crossorigin href="./assets/arrays-DYDL-3-i.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-md4mFbOQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/once-DRroIaBz.js">
+    <link rel="modulepreload" crossorigin href="./assets/capabilities-C_FLIcjP.js">
+    <link rel="modulepreload" crossorigin href="./assets/createReducer-1ePoj7v6.js">
+    <link rel="modulepreload" crossorigin href="./assets/paths-BXWH6vv4.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-BrR4M-k3.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-HlsDto3K.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-CHcznzB-.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-VjDnmGCZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-E6ttb8td.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DBiqbYe-.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-DQOq2Tf-.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-B324sPca.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-C9ZB41s2.js">
+    <link rel="modulepreload" crossorigin href="./assets/stex-CtmkcLz7.js">
+    <link rel="modulepreload" crossorigin href="./assets/toDate-B5A0DFEz.js">
+    <link rel="modulepreload" crossorigin href="./assets/purify.es-DBmVz-Wl.js">
+    <link rel="modulepreload" crossorigin href="./assets/cjs-BRGiG41H.js">
+    <link rel="modulepreload" crossorigin href="./assets/isSymbol-BT6B8Bon.js">
+    <link rel="modulepreload" crossorigin href="./assets/now-CsYTPAhW.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-DhnxH9Rh.js">
+    <link rel="modulepreload" crossorigin href="./assets/database-zap-kIkTfzTX.js">
+    <link rel="modulepreload" crossorigin href="./assets/main-B0OX4z33.js">
+    <link rel="modulepreload" crossorigin href="./assets/cells-DAxz8J5R.js">
+    <link rel="modulepreload" crossorigin href="./assets/ErrorBoundary-DzYV_VeY.js">
+    <link rel="modulepreload" crossorigin href="./assets/kbd-B3Breaz2.js">
+    <link rel="modulepreload" crossorigin href="./assets/useInstallPackage-D0NLybAx.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-dialog-BGBdrcqJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/dialog-Dj0qTFnG.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDebounce-CLMpJfhX.js">
+    <link rel="modulepreload" crossorigin href="./assets/numbers-CAW8yjzj.js">
+    <link rel="modulepreload" crossorigin href="./assets/SSRProvider-kyGHZp36.js">
+    <link rel="modulepreload" crossorigin href="./assets/context-B3MsQb-b.js">
+    <link rel="modulepreload" crossorigin href="./assets/useNumberFormatter-DtiQW2H_.js">
+    <link rel="modulepreload" crossorigin href="./assets/usePress-CfcdTqJM.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-BX98vgAu.js">
+    <link rel="modulepreload" crossorigin href="./assets/ImperativeModal-D7lQ0Q7_.js">
+    <link rel="modulepreload" crossorigin href="./assets/cell-link-CC2MiW7a.js">
+    <link rel="modulepreload" crossorigin href="./assets/multi-map-rafH3cg3.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-DvqcBMUv.js">
+    <link rel="modulepreload" crossorigin href="./assets/chevron-right-CG5QYXYk.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-menu-D1A3cFC8.js">
+    <link rel="modulepreload" crossorigin href="./assets/links-Dpap8NI2.js">
+    <link rel="modulepreload" crossorigin href="./assets/useRunCells-BMgfN_OV.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-BCF-tANo.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-BwrPA9zQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/copy-icon-BYNydU7b.js">
+    <link rel="modulepreload" crossorigin href="./assets/RenderHTML-DkEHxB1r.js">
+    <link rel="modulepreload" crossorigin href="./assets/datasource-C1JWjcmE.js">
+    <link rel="modulepreload" crossorigin href="./assets/state-DgRSUIT8.js">
+    <link rel="modulepreload" crossorigin href="./assets/sparkles-CZ5WmLPA.js">
+    <link rel="modulepreload" crossorigin href="./assets/MarimoErrorOutput-1q6qtvxi.js">
+    <link rel="modulepreload" crossorigin href="./assets/spinner-Bhir8k53.js">
+    <link rel="modulepreload" crossorigin href="./assets/html-to-image-v-_444d3.js">
+    <link rel="modulepreload" crossorigin href="./assets/focus-Crs_4nnQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/useAsyncData-BFC6lWG9.js">
+    <link rel="modulepreload" crossorigin href="./assets/LazyAnyLanguageCodeMirror-BF3xpDgO.js">
+    <link rel="modulepreload" crossorigin href="./assets/micromark-factory-space-DzSMahmM.js">
+    <link rel="modulepreload" crossorigin href="./assets/chunk-5FQGJX7Z-e_arGD4o.js">
+    <link rel="modulepreload" crossorigin href="./assets/markdown-renderer-CbuqHMPu.js">
+    <link rel="modulepreload" crossorigin href="./assets/command-CBCkexpx.js">
+    <link rel="modulepreload" crossorigin href="./assets/popover-UExmgBsf.js">
+    <link rel="modulepreload" crossorigin href="./assets/errors-TZBmrJmc.js">
+    <link rel="modulepreload" crossorigin href="./assets/download-CXTuIv7r.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-DPyRV1LT.js">
+    <link rel="modulepreload" crossorigin href="./assets/useIframeCapabilities-BvE4n6hj.js">
+    <link rel="modulepreload" crossorigin href="./assets/error-banner-C6aBa98y.js">
+    <link rel="modulepreload" crossorigin href="./assets/formats-Dsc8AdCp.js">
+    <link rel="modulepreload" crossorigin href="./assets/en-US-D_il4jD7.js">
+    <link rel="modulepreload" crossorigin href="./assets/isValid-C8T5uJYI.js">
+    <link rel="modulepreload" crossorigin href="./assets/dates-CAlnO9QB.js">
+    <link rel="modulepreload" crossorigin href="./assets/maps-C48Oksn0.js">
+    <link rel="modulepreload" crossorigin href="./assets/extends-B2LJnKU3.js">
+    <link rel="modulepreload" crossorigin href="./assets/emotion-is-prop-valid.esm-DD4AwVTU.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDateFormatter-CgFoBhVq.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-icons.esm-D9xfKaPZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-6NxtGaCm.js">
+    <link rel="modulepreload" crossorigin href="./assets/ellipsis-KAhMaCIV.js">
+    <link rel="modulepreload" crossorigin href="./assets/message-circle-CWm2KnSx.js">
+    <link rel="modulepreload" crossorigin href="./assets/trash-2-CKlZA04n.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-resizable-panels.browser.esm-BUNcfKXO.js">
+    <link rel="modulepreload" crossorigin href="./assets/JsonOutput-ugBhs7bt.js">
+    <link rel="modulepreload" crossorigin href="./assets/chart-no-axes-column-nqk474t8.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-function-D1dlJvD8.js">
+    <link rel="modulepreload" crossorigin href="./assets/spec-Cq8FVoTf.js">
+    <link rel="modulepreload" crossorigin href="./assets/ellipsis-vertical-CkwWkOQL.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-cw-DHwG4Mac.js">
+    <link rel="modulepreload" crossorigin href="./assets/tree-actions-Ci3CV3hN.js">
+    <link rel="modulepreload" crossorigin href="./assets/components-CZy03693.js">
+    <link rel="modulepreload" crossorigin href="./assets/column-preview-DBPye87P.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-D9TuFTJG.js">
+    <link rel="modulepreload" crossorigin href="./assets/radio-group-BI3wOhfc.js">
+    <link rel="modulepreload" crossorigin href="./assets/floating-outline-DHE0ukvC.js">
+    <link rel="modulepreload" crossorigin href="./assets/objectWithoutPropertiesLoose-DaPAPabU.js">
+    <link rel="modulepreload" crossorigin href="./assets/esm-BmrwxxCo.js">
+    <link rel="modulepreload" crossorigin href="./assets/eye-off-n1Li95bE.js">
+    <link rel="modulepreload" crossorigin href="./assets/plus-BgB18UzY.js">
+    <link rel="modulepreload" crossorigin href="./assets/readonly-python-code-CaKJ84fy.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-headphone-BrQspHac.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-BrdxGLRX.js">
+    <link rel="modulepreload" crossorigin href="./assets/image-DQHXdEQn.js">
+    <link rel="modulepreload" crossorigin href="./assets/file-icons-5G4ZC70N.js">
+    <link rel="modulepreload" crossorigin href="./assets/switch-BvybnC9P.js">
+    <link rel="modulepreload" crossorigin href="./assets/events-BRAWQiYK.js">
+    <link rel="modulepreload" crossorigin href="./assets/globals-DUw71mRV.js">
+    <link rel="modulepreload" crossorigin href="./assets/share-DIVpiHPe.js">
+    <link rel="modulepreload" crossorigin href="./assets/blob-D-eV0cU3.js">
+    <link rel="modulepreload" crossorigin href="./assets/memoize-Tp7rARFe.js">
+    <link rel="modulepreload" crossorigin href="./assets/get-C-qh_et5.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseSet-CxV9N1bc.js">
+    <link rel="modulepreload" crossorigin href="./assets/state-CjlRDG08.js">
+    <link rel="modulepreload" crossorigin href="./assets/label-DTR8T0AE.js">
+    <link rel="modulepreload" crossorigin href="./assets/textarea-GPxmW3rS.js">
+    <link rel="modulepreload" crossorigin href="./assets/refresh-ccw-C-n2VFP5.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-DRJZl2zK.js">
+    <link rel="modulepreload" crossorigin href="./assets/renderShortcut-Bfk4NjRL.js">
+    <link rel="modulepreload" crossorigin href="./assets/field-BrLPDxsA.js">
+    <link rel="modulepreload" crossorigin href="./assets/RSPContexts-CINae4Gg.js">
+    <link rel="modulepreload" crossorigin href="./assets/useBoolean-xXcxYCaI.js">
+    <link rel="modulepreload" crossorigin href="./assets/useDeepCompareMemoize-D0WTlCXt.js">
+    <link rel="modulepreload" crossorigin href="./assets/types-W8WWuumF.js">
+    <link rel="modulepreload" crossorigin href="./assets/fileToBase64-Bzn96tYq.js">
+    <link rel="modulepreload" crossorigin href="./assets/pathUtils-DOhgNpTR.js">
+    <link rel="modulepreload" crossorigin href="./assets/prop-types-BiQYf0aU.js">
+    <link rel="modulepreload" crossorigin href="./assets/es-DaYh1PsD.js">
+    <link rel="modulepreload" crossorigin href="./assets/hasIn-DiS_ryrS.js">
+    <link rel="modulepreload" crossorigin href="./assets/flatten-Dl4V1ub3.js">
+    <link rel="modulepreload" crossorigin href="./assets/pick-DqWUNly1.js">
+    <link rel="modulepreload" crossorigin href="./assets/code-xml-CZN6vNxu.js">
+    <link rel="modulepreload" crossorigin href="./assets/house-mGK3v0Mm.js">
+    <link rel="modulepreload" crossorigin href="./assets/square-DMaNzePN.js">
+    <link rel="modulepreload" crossorigin href="./assets/triangle-alert-B8l157gP.js">
+    <link rel="modulepreload" crossorigin href="./assets/bundle.esm-BIoPrMH_.js">
+    <link rel="stylesheet" crossorigin href="./assets/cells-jmgGt1lS.css">
+    <link rel="stylesheet" crossorigin href="./assets/markdown-renderer-DdDKmWlR.css">
+    <link rel="stylesheet" crossorigin href="./assets/JsonOutput-B7vuddcd.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DH5UUBE4.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    
+<script data-marimo="true">
+    Object.defineProperty(window, "__MARIMO_EXPORT_CONTEXT__", {
+        value: Object.freeze({
+            trusted: true,
+            notebookCode: "import marimo\n\n__generated_with = \"0.23.6\"\napp = marimo.App(width=\"medium\", app_title=\"Final project\")\n\n\n@app.cell\ndef _():\n    # Cell 1 \u2014 imports\n    import marimo as mo\n    import pandas as pd\n    import plotly.express as px\n\n    return mo, pd, px\n\n\n@app.cell\ndef _(pd):\n    panel = pd.read_csv(\n        \"/Users/nataliam/Documents/Claude/Projects/German hospitals/data/processed/panel.csv\"\n    )\n    panel.head()\n    return (panel,)\n\n\n@app.cell\ndef _(panel, px):\n    fig = px.scatter(\n        panel[panel[\"year\"] == 2023],\n        x=\"share_65_plus\",\n        y=\"hospitals_per_100k\",\n        hover_name=\"kreis_name\",\n        title=\"Hospital access in 2023\",\n    )\n    fig\n    return\n\n\n@app.cell\ndef _(mo):\n    year_picker = mo.ui.dropdown(\n        options=[2011, 2015, 2019, 2023],\n        value=2023,\n        label=\"Pick a year:\",\n    )\n    year_picker\n    return (year_picker,)\n\n\n@app.cell\ndef _(year_picker):\n    year = year_picker.value\n    return\n\n\n@app.cell\ndef _(mo):\n    mo.md(\"\"\"\n    ## How has hospital access changed across aging cohorts?\n\n    The trajectory below splits Kreise into four groups by their 2011 aging level\n    and shows how each group's median hospital count evolved through 2023.\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(panel, pd, px):\n    baseline = (\n        panel[panel[\"year\"] == 2011]\n        [[\"kreis_code\", \"share_65_plus\"]]\n        .rename(columns={\"share_65_plus\": \"aging_2011\"})\n    )\n    baseline[\"aging_quartile\"] = pd.qcut(\n        baseline[\"aging_2011\"],\n        q=4,\n        labels=[\"Q1 (youngest 25%)\", \"Q2\", \"Q3\", \"Q4 (oldest 25%)\"],\n    )\n\n    # 2. Tag each panel row with its Kreis's 2011 quartile\n    panel_q = panel.merge(baseline[[\"kreis_code\", \"aging_quartile\"]], on=\"kreis_code\")\n\n    # 3. Compute absolute hospital count per-capita access per (quartile, year)\n    trajectory_abs = (\n        panel_q\n        .groupby([\"aging_quartile\", \"year\"])[\"n_hospitals\"]\n        .median()\n        .reset_index()\n    )\n    # 4. Plot the trajectories\n    fig2 = px.line(\n        trajectory_abs,\n        x=\"year\",\n        y=\"n_hospitals\",\n        color=\"aging_quartile\",\n        markers=True,                            # show each year's point\n        title=\"Absolute hospital access by 2011 aging quartile, 2011 \u2192 2023\",\n        labels={\n            \"year\": \"Year\",\n            \"n_hospitals\": \"Median number of hospitals per Kreis\",\n            \"aging_quartile\": \"Aging cohort (2011)\",\n        },\n        color_discrete_sequence=[\"#3B82F6\", \"#60A5FA\", \"#F87171\", \"#C8385C\"],\n        # blue \u2192 cherry: visually conveys \"younger \u2192 older\"\n    )\n    # Removing the default title\n    fig2.update_layout(title=None, margin=dict(t=40, b=100, l=60, r=200))\n\n    # New title \u2014 inside the plot\n    fig2.add_annotation(\n        text=\"\u003Cb\u003EAn apparent sharp change in access to hospitals in 2019, for all but the youngest regions \u003C/b\u003E\",\n        xref=\"paper\", yref=\"paper\",\n        x=0.49, y=1.07,\n        xanchor=\"center\", yanchor=\"top\",\n        showarrow=False,\n        font=dict(size=15, color=\"#191240\"),\n    )\n\n    fig2.add_annotation(\n        text=(\"The popular narrative that aging German regions have disproportionately been losing \u003Cbr\u003Ehospital access is not supported by the data\u003C/i\u003E\"),\n        xref=\"paper\", yref=\"paper\",\n        x=0.4, y=0.78,\n        xanchor=\"center\", yanchor=\"top\",\n        showarrow=False,\n        font=dict(size=11, color=\"#555\"),\n        bgcolor=\"rgba(255,255,255,0.85)\",\n        bordercolor=\"lightgray\",\n        borderwidth=1,\n        borderpad=8,\n    )\n\n    # Source \u2014 small gray text under the chart\n    fig2.add_annotation(\n        text=(\"Source: Destatis Krankenhausverzeichnis\u00b7 \"\n              \"Regionalstatistik table 12411-03-03-4.\"\n        ),\n        xref=\"paper\", yref=\"paper\",\n        x=0.6, y=-0.25,\n        xanchor=\"left\",\n        showarrow=False,\n        font=dict(size=10, color=\"gray\"),\n    )\n\n    fig2.add_vrect(\n        x0=2019, x1=2023,\n        fillcolor=\"gray\", opacity=0.09,\n        line_width=0,\n        annotation_text=\"Growth of 28% within 4 years \u003Cbr\u003ESuspected change in reporting\",\n        annotation_position=\"top left\",\n        annotation=dict(font=dict(size=11, color=\"dark gray\")),\n    )\n\n    fig2.show()\n    return\n\n\n@app.cell\ndef _():\n    return\n\n\n@app.cell(hide_code=True)\ndef _(mo):\n    mo.md(r\"\"\"\n    A similar tendency with a sudden growth of hospital access after 2019 can be observed if counted per-capita\n    \"\"\")\n    return\n\n\n@app.cell\ndef _(panel, pd):\n    import plotly.express as px3\n\n    # 1. Get each Kreis's baseline aging in 2011, assign it to a quartile\n    baseline3 = (\n        panel[panel[\"year\"] == 2011]\n        [[\"kreis_code\", \"share_65_plus\"]]\n        .rename(columns={\"share_65_plus\": \"aging_2011\"})\n    )\n    baseline3[\"aging_quartile\"] = pd.qcut(\n        baseline3[\"aging_2011\"],\n        q=4,\n        labels=[\"Q1 (youngest 25%)\", \"Q2\", \"Q3\", \"Q4 (oldest 25%)\"],\n    )\n\n    # 2. Tag each panel row with its Kreis's 2011 quartile\n    panel_q3 = panel.merge(baseline3[[\"kreis_code\", \"aging_quartile\"]], on=\"kreis_code\")\n\n    # 3. Compute median per-capita access per (quartile, year)\n    trajectory = (\n        panel_q3\n        .groupby([\"aging_quartile\", \"year\"])[\"hospitals_per_100k\"]\n        .median()\n        .reset_index()\n    )\n\n    # 4. Plot the trajectories\n    fig3 = px3.line(\n        trajectory,\n        x=\"year\",\n        y=\"hospitals_per_100k\",\n        color=\"aging_quartile\",\n        markers=True,                            # show each year's point\n        title=\"Median hospital access by 2011 aging quartile, 2011 \u2192 2023\",\n        labels={\n            \"year\": \"Year\",\n            \"hospitals_per_100k\": \"Median hospitals per 100,000 residents\",\n            \"aging_quartile\": \"Aging cohort (2011)\",\n        },\n        color_discrete_sequence=[\"#3B82F6\", \"#60A5FA\", \"#F87171\", \"#C8385C\"],\n        # blue \u2192 cherry: visually conveys \"younger \u2192 older\"\n    )\n    # Removing the default title\n    fig3.update_layout(title=None, margin=dict(t=40, b=100, l=60, r=200))\n\n    # New title \u2014 inside the plot\n    fig3.add_annotation(\n        text=\"\u003Cb\u003EApparent post-2019 rise in older Kreise's per-capita hospital access\u003C/b\u003E\",\n        xref=\"paper\", yref=\"paper\",\n        x=0.45, y=1.07,#0.937,\n        xanchor=\"center\", yanchor=\"top\",\n        showarrow=False,\n        font=dict(size=15, color=\"#191240\"),\n    )\n\n    fig3.add_annotation(\n        text=(\"Question stays. Is the pattern real or\u003Cbr\u003E is it inflated by a change in Destatis' facility-level reporting in 2023?\u003C/i\u003E\"),\n        xref=\"paper\", yref=\"paper\",\n        x=0.4, y=0.84,\n        xanchor=\"center\", yanchor=\"top\",\n        showarrow=False,\n        font=dict(size=11, color=\"#555\"),\n        bgcolor=\"rgba(255,255,255,0.85)\",\n        bordercolor=\"lightgray\",\n        borderwidth=1,\n        borderpad=8,\n    )\n\n    # Source \u2014 small gray text under the chart\n    fig3.add_annotation(\n        text=(\"Source: Destatis Krankenhausverzeichnis\u00b7 \"\n              \"Regionalstatistik table 12411-03-03-4.\"\n        ),\n        xref=\"paper\", yref=\"paper\",\n        x=0.6, y=-0.25,\n        xanchor=\"left\",\n        showarrow=False,\n        font=dict(size=10, color=\"gray\"),\n    )\n    fig3.show()\n    return\n\n\nif __name__ == \"__main__\":\n    app.run()\n",
+        }),
+        writable: false,
+        configurable: false,
+    });
+</script>
+<marimo-code hidden="">import%20marimo%0A%0A__generated_with%20%3D%20%220.23.6%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22%2C%20app_title%3D%22Final%20project%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20%23%20Cell%201%20%E2%80%94%20imports%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20import%20pandas%20as%20pd%0A%20%20%20%20import%20plotly.express%20as%20px%0A%0A%20%20%20%20return%20mo%2C%20pd%2C%20px%0A%0A%0A%40app.cell%0Adef%20_(pd)%3A%0A%20%20%20%20panel%20%3D%20pd.read_csv(%0A%20%20%20%20%20%20%20%20%22%2FUsers%2Fnataliam%2FDocuments%2FClaude%2FProjects%2FGerman%20hospitals%2Fdata%2Fprocessed%2Fpanel.csv%22%0A%20%20%20%20)%0A%20%20%20%20panel.head()%0A%20%20%20%20return%20(panel%2C)%0A%0A%0A%40app.cell%0Adef%20_(panel%2C%20px)%3A%0A%20%20%20%20fig%20%3D%20px.scatter(%0A%20%20%20%20%20%20%20%20panel%5Bpanel%5B%22year%22%5D%20%3D%3D%202023%5D%2C%0A%20%20%20%20%20%20%20%20x%3D%22share_65_plus%22%2C%0A%20%20%20%20%20%20%20%20y%3D%22hospitals_per_100k%22%2C%0A%20%20%20%20%20%20%20%20hover_name%3D%22kreis_name%22%2C%0A%20%20%20%20%20%20%20%20title%3D%22Hospital%20access%20in%202023%22%2C%0A%20%20%20%20)%0A%20%20%20%20fig%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20year_picker%20%3D%20mo.ui.dropdown(%0A%20%20%20%20%20%20%20%20options%3D%5B2011%2C%202015%2C%202019%2C%202023%5D%2C%0A%20%20%20%20%20%20%20%20value%3D2023%2C%0A%20%20%20%20%20%20%20%20label%3D%22Pick%20a%20year%3A%22%2C%0A%20%20%20%20)%0A%20%20%20%20year_picker%0A%20%20%20%20return%20(year_picker%2C)%0A%0A%0A%40app.cell%0Adef%20_(year_picker)%3A%0A%20%20%20%20year%20%3D%20year_picker.value%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%22%22%22%0A%20%20%20%20%23%23%20How%20has%20hospital%20access%20changed%20across%20aging%20cohorts%3F%0A%0A%20%20%20%20The%20trajectory%20below%20splits%20Kreise%20into%20four%20groups%20by%20their%202011%20aging%20level%0A%20%20%20%20and%20shows%20how%20each%20group's%20median%20hospital%20count%20evolved%20through%202023.%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(panel%2C%20pd%2C%20px)%3A%0A%20%20%20%20baseline%20%3D%20(%0A%20%20%20%20%20%20%20%20panel%5Bpanel%5B%22year%22%5D%20%3D%3D%202011%5D%0A%20%20%20%20%20%20%20%20%5B%5B%22kreis_code%22%2C%20%22share_65_plus%22%5D%5D%0A%20%20%20%20%20%20%20%20.rename(columns%3D%7B%22share_65_plus%22%3A%20%22aging_2011%22%7D)%0A%20%20%20%20)%0A%20%20%20%20baseline%5B%22aging_quartile%22%5D%20%3D%20pd.qcut(%0A%20%20%20%20%20%20%20%20baseline%5B%22aging_2011%22%5D%2C%0A%20%20%20%20%20%20%20%20q%3D4%2C%0A%20%20%20%20%20%20%20%20labels%3D%5B%22Q1%20(youngest%2025%25)%22%2C%20%22Q2%22%2C%20%22Q3%22%2C%20%22Q4%20(oldest%2025%25)%22%5D%2C%0A%20%20%20%20)%0A%0A%20%20%20%20%23%202.%20Tag%20each%20panel%20row%20with%20its%20Kreis's%202011%20quartile%0A%20%20%20%20panel_q%20%3D%20panel.merge(baseline%5B%5B%22kreis_code%22%2C%20%22aging_quartile%22%5D%5D%2C%20on%3D%22kreis_code%22)%0A%0A%20%20%20%20%23%203.%20Compute%20absolute%20hospital%20count%20per-capita%20access%20per%20(quartile%2C%20year)%0A%20%20%20%20trajectory_abs%20%3D%20(%0A%20%20%20%20%20%20%20%20panel_q%0A%20%20%20%20%20%20%20%20.groupby(%5B%22aging_quartile%22%2C%20%22year%22%5D)%5B%22n_hospitals%22%5D%0A%20%20%20%20%20%20%20%20.median()%0A%20%20%20%20%20%20%20%20.reset_index()%0A%20%20%20%20)%0A%20%20%20%20%23%204.%20Plot%20the%20trajectories%0A%20%20%20%20fig2%20%3D%20px.line(%0A%20%20%20%20%20%20%20%20trajectory_abs%2C%0A%20%20%20%20%20%20%20%20x%3D%22year%22%2C%0A%20%20%20%20%20%20%20%20y%3D%22n_hospitals%22%2C%0A%20%20%20%20%20%20%20%20color%3D%22aging_quartile%22%2C%0A%20%20%20%20%20%20%20%20markers%3DTrue%2C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20show%20each%20year's%20point%0A%20%20%20%20%20%20%20%20title%3D%22Absolute%20hospital%20access%20by%202011%20aging%20quartile%2C%202011%20%E2%86%92%202023%22%2C%0A%20%20%20%20%20%20%20%20labels%3D%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22year%22%3A%20%22Year%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22n_hospitals%22%3A%20%22Median%20number%20of%20hospitals%20per%20Kreis%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22aging_quartile%22%3A%20%22Aging%20cohort%20(2011)%22%2C%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20color_discrete_sequence%3D%5B%22%233B82F6%22%2C%20%22%2360A5FA%22%2C%20%22%23F87171%22%2C%20%22%23C8385C%22%5D%2C%0A%20%20%20%20%20%20%20%20%23%20blue%20%E2%86%92%20cherry%3A%20visually%20conveys%20%22younger%20%E2%86%92%20older%22%0A%20%20%20%20)%0A%20%20%20%20%23%20Removing%20the%20default%20title%0A%20%20%20%20fig2.update_layout(title%3DNone%2C%20margin%3Ddict(t%3D40%2C%20b%3D100%2C%20l%3D60%2C%20r%3D200))%0A%0A%20%20%20%20%23%20New%20title%20%E2%80%94%20inside%20the%20plot%0A%20%20%20%20fig2.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D%22%3Cb%3EAn%20apparent%20sharp%20change%20in%20access%20to%20hospitals%20in%202019%2C%20for%20all%20but%20the%20youngest%20regions%20%3C%2Fb%3E%22%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.49%2C%20y%3D1.07%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22center%22%2C%20yanchor%3D%22top%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D15%2C%20color%3D%22%23191240%22)%2C%0A%20%20%20%20)%0A%0A%20%20%20%20fig2.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D(%22The%20popular%20narrative%20that%20aging%20German%20regions%20have%20disproportionately%20been%20losing%20%3Cbr%3Ehospital%20access%20is%20not%20supported%20by%20the%20data%3C%2Fi%3E%22)%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.4%2C%20y%3D0.78%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22center%22%2C%20yanchor%3D%22top%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D11%2C%20color%3D%22%23555%22)%2C%0A%20%20%20%20%20%20%20%20bgcolor%3D%22rgba(255%2C255%2C255%2C0.85)%22%2C%0A%20%20%20%20%20%20%20%20bordercolor%3D%22lightgray%22%2C%0A%20%20%20%20%20%20%20%20borderwidth%3D1%2C%0A%20%20%20%20%20%20%20%20borderpad%3D8%2C%0A%20%20%20%20)%0A%0A%20%20%20%20%23%20Source%20%E2%80%94%20small%20gray%20text%20under%20the%20chart%0A%20%20%20%20fig2.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D(%22Source%3A%20Destatis%20Krankenhausverzeichnis%C2%B7%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Regionalstatistik%20table%2012411-03-03-4.%22%0A%20%20%20%20%20%20%20%20)%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.6%2C%20y%3D-0.25%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22left%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D10%2C%20color%3D%22gray%22)%2C%0A%20%20%20%20)%0A%0A%20%20%20%20fig2.add_vrect(%0A%20%20%20%20%20%20%20%20x0%3D2019%2C%20x1%3D2023%2C%0A%20%20%20%20%20%20%20%20fillcolor%3D%22gray%22%2C%20opacity%3D0.09%2C%0A%20%20%20%20%20%20%20%20line_width%3D0%2C%0A%20%20%20%20%20%20%20%20annotation_text%3D%22Growth%20of%2028%25%20within%204%20years%20%3Cbr%3ESuspected%20change%20in%20reporting%22%2C%0A%20%20%20%20%20%20%20%20annotation_position%3D%22top%20left%22%2C%0A%20%20%20%20%20%20%20%20annotation%3Ddict(font%3Ddict(size%3D11%2C%20color%3D%22dark%20gray%22))%2C%0A%20%20%20%20)%0A%0A%20%20%20%20fig2.show()%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%0A%20%20%20%20A%20similar%20tendency%20with%20a%20sudden%20growth%20of%20hospital%20access%20after%202019%20can%20be%20observed%20if%20counted%20per-capita%0A%20%20%20%20%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(panel%2C%20pd)%3A%0A%20%20%20%20import%20plotly.express%20as%20px3%0A%0A%20%20%20%20%23%201.%20Get%20each%20Kreis's%20baseline%20aging%20in%202011%2C%20assign%20it%20to%20a%20quartile%0A%20%20%20%20baseline3%20%3D%20(%0A%20%20%20%20%20%20%20%20panel%5Bpanel%5B%22year%22%5D%20%3D%3D%202011%5D%0A%20%20%20%20%20%20%20%20%5B%5B%22kreis_code%22%2C%20%22share_65_plus%22%5D%5D%0A%20%20%20%20%20%20%20%20.rename(columns%3D%7B%22share_65_plus%22%3A%20%22aging_2011%22%7D)%0A%20%20%20%20)%0A%20%20%20%20baseline3%5B%22aging_quartile%22%5D%20%3D%20pd.qcut(%0A%20%20%20%20%20%20%20%20baseline3%5B%22aging_2011%22%5D%2C%0A%20%20%20%20%20%20%20%20q%3D4%2C%0A%20%20%20%20%20%20%20%20labels%3D%5B%22Q1%20(youngest%2025%25)%22%2C%20%22Q2%22%2C%20%22Q3%22%2C%20%22Q4%20(oldest%2025%25)%22%5D%2C%0A%20%20%20%20)%0A%0A%20%20%20%20%23%202.%20Tag%20each%20panel%20row%20with%20its%20Kreis's%202011%20quartile%0A%20%20%20%20panel_q3%20%3D%20panel.merge(baseline3%5B%5B%22kreis_code%22%2C%20%22aging_quartile%22%5D%5D%2C%20on%3D%22kreis_code%22)%0A%0A%20%20%20%20%23%203.%20Compute%20median%20per-capita%20access%20per%20(quartile%2C%20year)%0A%20%20%20%20trajectory%20%3D%20(%0A%20%20%20%20%20%20%20%20panel_q3%0A%20%20%20%20%20%20%20%20.groupby(%5B%22aging_quartile%22%2C%20%22year%22%5D)%5B%22hospitals_per_100k%22%5D%0A%20%20%20%20%20%20%20%20.median()%0A%20%20%20%20%20%20%20%20.reset_index()%0A%20%20%20%20)%0A%0A%20%20%20%20%23%204.%20Plot%20the%20trajectories%0A%20%20%20%20fig3%20%3D%20px3.line(%0A%20%20%20%20%20%20%20%20trajectory%2C%0A%20%20%20%20%20%20%20%20x%3D%22year%22%2C%0A%20%20%20%20%20%20%20%20y%3D%22hospitals_per_100k%22%2C%0A%20%20%20%20%20%20%20%20color%3D%22aging_quartile%22%2C%0A%20%20%20%20%20%20%20%20markers%3DTrue%2C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20show%20each%20year's%20point%0A%20%20%20%20%20%20%20%20title%3D%22Median%20hospital%20access%20by%202011%20aging%20quartile%2C%202011%20%E2%86%92%202023%22%2C%0A%20%20%20%20%20%20%20%20labels%3D%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22year%22%3A%20%22Year%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22hospitals_per_100k%22%3A%20%22Median%20hospitals%20per%20100%2C000%20residents%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22aging_quartile%22%3A%20%22Aging%20cohort%20(2011)%22%2C%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20color_discrete_sequence%3D%5B%22%233B82F6%22%2C%20%22%2360A5FA%22%2C%20%22%23F87171%22%2C%20%22%23C8385C%22%5D%2C%0A%20%20%20%20%20%20%20%20%23%20blue%20%E2%86%92%20cherry%3A%20visually%20conveys%20%22younger%20%E2%86%92%20older%22%0A%20%20%20%20)%0A%20%20%20%20%23%20Removing%20the%20default%20title%0A%20%20%20%20fig3.update_layout(title%3DNone%2C%20margin%3Ddict(t%3D40%2C%20b%3D100%2C%20l%3D60%2C%20r%3D200))%0A%0A%20%20%20%20%23%20New%20title%20%E2%80%94%20inside%20the%20plot%0A%20%20%20%20fig3.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D%22%3Cb%3EApparent%20post-2019%20rise%20in%20older%20Kreise's%20per-capita%20hospital%20access%3C%2Fb%3E%22%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.45%2C%20y%3D1.07%2C%230.937%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22center%22%2C%20yanchor%3D%22top%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D15%2C%20color%3D%22%23191240%22)%2C%0A%20%20%20%20)%0A%0A%20%20%20%20fig3.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D(%22Question%20stays.%20Is%20the%20pattern%20real%20or%3Cbr%3E%20is%20it%20inflated%20by%20a%20change%20in%20Destatis'%20facility-level%20reporting%20in%202023%3F%3C%2Fi%3E%22)%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.4%2C%20y%3D0.84%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22center%22%2C%20yanchor%3D%22top%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D11%2C%20color%3D%22%23555%22)%2C%0A%20%20%20%20%20%20%20%20bgcolor%3D%22rgba(255%2C255%2C255%2C0.85)%22%2C%0A%20%20%20%20%20%20%20%20bordercolor%3D%22lightgray%22%2C%0A%20%20%20%20%20%20%20%20borderwidth%3D1%2C%0A%20%20%20%20%20%20%20%20borderpad%3D8%2C%0A%20%20%20%20)%0A%0A%20%20%20%20%23%20Source%20%E2%80%94%20small%20gray%20text%20under%20the%20chart%0A%20%20%20%20fig3.add_annotation(%0A%20%20%20%20%20%20%20%20text%3D(%22Source%3A%20Destatis%20Krankenhausverzeichnis%C2%B7%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Regionalstatistik%20table%2012411-03-03-4.%22%0A%20%20%20%20%20%20%20%20)%2C%0A%20%20%20%20%20%20%20%20xref%3D%22paper%22%2C%20yref%3D%22paper%22%2C%0A%20%20%20%20%20%20%20%20x%3D0.6%2C%20y%3D-0.25%2C%0A%20%20%20%20%20%20%20%20xanchor%3D%22left%22%2C%0A%20%20%20%20%20%20%20%20showarrow%3DFalse%2C%0A%20%20%20%20%20%20%20%20font%3Ddict(size%3D10%2C%20color%3D%22gray%22)%2C%0A%20%20%20%20)%0A%20%20%20%20fig3.show()%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      Object.defineProperty(window, "__MARIMO_MOUNT_CONFIG__", {
+        value: Object.freeze({
+            "filename": "notebook.py",
+            "cwd": "",
+            "lspWorkspace": null,
+            "mode": "read",
+            "version": "0.23.6",
+            "serverToken": "unused",
+            "config": {"ai": {"custom_providers": {}, "models": {"custom_models": [], "displayed_models": []}}, "completion": {"activate_on_typing": true, "copilot": false, "signature_hint_on_typing": false}, "diagnostics": {"sql_linter": true}, "display": {"cell_output": "below", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": false}}, "mcp": {"mcpServers": {}, "presets": []}, "package_management": {"manager": "uv"}, "runtime": {"auto_instantiate": false, "auto_reload": "off", "default_csv_encoding": "utf-8", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "show_tracebacks": false, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"app_title": "Final project", "sql_output": "auto", "width": "medium"},
+            "view": {"showAppCode": false},
+            "notebook": null,
+            "session": null,
+            "runtimeConfig": null,
+        }),
+        writable: false,
+        configurable: false,
+      });
+    </script>
+  </body>
+</html>
