@@ -27,6 +27,7 @@ I would like to track what has been happening in Germany before the reform, espe
 ![Hospital access vs. aging, 2023](outputs/access_2023.png)
 3. A hospital expansion between 2019 and 2023 might reflect a reporting-methodology change. Interestingly, however, the youngest cohort still declined.
 ![Hospital trajectory by aging cohort, 2011–2023](outputs/trajectory.png)
+[Interactive version](outputs/trajectory.html)
 
 
 
