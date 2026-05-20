@@ -26,7 +26,8 @@ I would like to track what has been happening in Germany before the reform, espe
 3. A hospital expansion between 2019 and 2023 might reflect a reporting-methodology change. Interestingly, however, the youngest cohort still declined.
 
 ![Trajectory chart](outputs/trajectory.png)
-![Trajectory per capita chart](outputs/trajectory percapita.png)
+[Interactive version](outputs/trajectory.html)
+![Trajectory per capita chart](outputs/trajectory percapita.png) 
 
 ## Methodological choices and limitations
 I've excluded private clinics and day-clinics without a Versorgungsvertrag with statutory insurance from the research as they aren't accessible for the majority of patients. Facility types 1, 2, 3 and 5 (university hospitals, specialised clinics, general hospitals, hospitals accepting people with statutory insurance and military hospitals) are kept as a proxy for accessible inpatient hospital care.  
