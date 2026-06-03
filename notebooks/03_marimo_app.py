@@ -120,7 +120,7 @@ def _(panel, pd, px):
     )
 
     fig2.add_annotation(
-        text=("The popular narrative that aging German regions have disproportionately been losing <br>hospital access is not supported by the data</i>"),
+        text=("The popular narrative that aging German regions have disproportionately been losing <br>hospital access is not supported by the data"),
         xref="paper", yref="paper",
         x=0.4, y=0.78,
         xanchor="center", yanchor="top",
@@ -227,7 +227,7 @@ def _(panel, pd):
     )
 
     fig3.add_annotation(
-        text=("Question stays. Is the pattern real or<br> is it inflated by a change in Destatis' facility-level reporting in 2023?</i>"),
+        text=("Question stays. Is the pattern real or<br> is it inflated by a change in Destatis' facility-level reporting in 2023?"),
         xref="paper", yref="paper",
         x=0.4, y=0.84,
         xanchor="center", yanchor="top",
