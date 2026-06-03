@@ -1,7 +1,7 @@
 [project]
 name = "german-hospitals"
 version = "0.1.0"
-description = "Add your description here"
+description = "A data project looking at German hospitals from 2010 to today"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

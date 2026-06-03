@@ -55,7 +55,7 @@ For this project, I'm defining an older population as 65+. The German research p
 ## How to reproduce
 1. Clone this repo
 2. `uv sync` (or `pip install -r requirements.txt`)
-3. Run `notebooks/01_data_pipeline.ipynb`
+3. Run `main.ipynb`
 4. Run `notebooks/02_analysis_and_viz.ipynb`
 
 ## Folder structure
@@ -63,10 +63,15 @@ For this project, I'm defining an older population as 65+. The German research p
 ```
 German hospitals/
 ├── data/
-│   ├── raw/         <- Original data files. 
+│   ├── raw/         <- Original data files.
 │   └── processed/   <- Cleaned-up data, prepared for analysis.
-├── notebooks/       <- Jupyter notebooks for exploration and analysis.
+├── notebooks/
+│   ├── main.ipynb                 <- Data pipeline: loads and cleans the raw data.
+│   ├── 02_analysis_and_viz.ipynb  <- Analysis and charts.
+│   └── 03_marimo_app.py           <- Interactive marimo app (in process).
 ├── outputs/         <- Final charts, maps, exports.
+├── pyproject.toml   <- Project dependencies.
+├── uv.lock          <- Locked dependency versions.
 └── README.md
 ```
 

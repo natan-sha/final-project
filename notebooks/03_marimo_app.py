@@ -10,14 +10,16 @@ def _():
     import marimo as mo
     import pandas as pd
     import plotly.express as px
+    from pathlib import Path
 
-    return mo, pd, px
+    return mo, pd, px, Path
 
 
 @app.cell
-def _(pd):
+def _(pd, Path):
+    BASE_DIR = Path(__file__).parent.parent
     panel = pd.read_csv(
-        "/Users/nataliam/Documents/Claude/Projects/German hospitals/data/processed/panel.csv"
+        BASE_DIR / "data" / "processed" / "panel.csv"
     )
     panel.head()
     return (panel,)
